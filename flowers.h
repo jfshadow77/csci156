@@ -10,7 +10,7 @@ class flowers
   
    struct rainbow
 		{
-			 array<string,8> list = {"white","blue","yellow","green","red","pink","purple","orange"};
+			string list[8] = {"white","blue","yellow","green","red","pink","purple","orange"};
 		};
     
    public:    
