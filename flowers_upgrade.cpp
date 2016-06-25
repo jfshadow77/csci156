@@ -3,50 +3,60 @@
 #include <algorithm>
 using namespace std;
 
+int numFlowers;
+int numRoses;
+int numLilys;
+
 int main()
 {
-  int numflowers;
-  int roses;
 	int flowernum;
 	string answer;
 	string a,b,c,d,e,f,g,h,i,j;
 
 	cout << "How many flowers do you wish to purchase" << endl;
-	cin >> numflowers;
-
-	string flowers[numflowers];
+	cin >> numFlowers;
+	
+	if (numFlowers > 10)
+	{
+		while (numFlowers > 10)
+		{
+			cout << "I'm sorry but we only sell up to 10 flowers at a time. Please enter valid purchase number" << endl;
+			cin >> numflowers;
+		}
+	}
+	string flowers[numFlowers];
   
   cout << "What color is each flower" << endl;
   
-  for (int i = 0; i < numflowers; i++)
+  for (int i = 0; i < numFlowers; i++)
   {
     cout << "The color of flower " << i+1 << " is: ";
     cin >> flowers[i];
   }
 	
-	if (numflowers == 1)
+	if (numFlowers == 1)
 	{
 		a = flowers[0];
 	}
-	else if (numflowers == 2)
+	else if (numFlowers == 2)
 	{
 		a = flowers[0];
 		b = flowers[1];
 	}
-	else if (numflowers == 3)
+	else if (numFlowers == 3)
 	{
 		a = flowers[0];
 		b = flowers[1];
 		c = flowers[2];
 	}
-	else if (numflowers == 4)
+	else if (numFlowers == 4)
 	{
 		a = flowers[0];
 		b = flowers[1];
 		c = flowers[2];
 		d = flowers[3];
 	}
-	else if (numflowers == 5)
+	else if (numFlowers == 5)
 	{
 		a = flowers[0];
 		b = flowers[1];
@@ -54,7 +64,7 @@ int main()
 		d = flowers[3];
 		e = flowers[4];
 	}
-	else if (numflowers == 6)
+	else if (numFlowers == 6)
 	{
 		a = flowers[0];
 		b = flowers[1];
@@ -63,7 +73,7 @@ int main()
 		e = flowers[4];
 		f = flowers[5];
 	}
-	else if (numflowers == 7)
+	else if (numFlowers == 7)
 	{
 		a = flowers[0];
 		b = flowers[1];
@@ -73,7 +83,7 @@ int main()
 		f = flowers[5];
 		g = flowers[6];
 	}
-	else if (numflowers == 8)
+	else if (numFlowers == 8)
 	{
 		a = flowers[0];
 		b = flowers[1];
@@ -84,7 +94,7 @@ int main()
 		g = flowers[6];
 		h = flowers[7];
 	}
-	else if (numflowers == 9)
+	else if (numFlowers == 9)
 	{
 		a = flowers[0];
 		b = flowers[1];
@@ -96,7 +106,7 @@ int main()
 		h = flowers[7];
 		i = flowers[8];
 	}
-	else if (numflowers == 10)
+	else if (numFlowers == 10)
 	{
 		a = flowers[0];
 		b = flowers[1];
@@ -108,19 +118,25 @@ int main()
 		h = flowers[7];
 		i = flowers[8];
 		j = flowers[9];
-	}
+	} 
 	
-	cout << endl;
-	cout << "The color of flower 1 is: " << a << endl;
-  
   cout << endl; 
-
+	
   cout << "How many flowers are roses " << endl;
-  cin >> roses;
+  cin >> numRoses;
+	
+	if (numRoses > numFlowers)
+	{
+		while (numRoses > numFlowers)
+		{
+			cout << "I'm sorry but you only want to purchase " << numflowers << " Please enter valid number." << endl;
+			cin >> numRoses;
+		}
+	}
 	
 	cout << "Which flowers are roses " << endl;
 	
-	for (int i = 0; i < roses; i++)
+	for (int i = 0; i < numRoses; i++)
 	{
 		cin >> answer;
 	
